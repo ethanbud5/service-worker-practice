@@ -10,10 +10,25 @@ class App extends Component {
 
     }
   }
+
+  componentDidMount(){
+    this.getData();
+  }
   
   // getData(){
-  //   Axios.get("")
+  //   fetch("/api/data",{
+  //     type:"GET"
+  //   }).then(res=>{
+  //     return res.json()
+  //   }).then(function(response) {
+  //     console.log(response)
+  //   }).catch(err=>console.log(err));
   // }
+  getData(){
+    Axios.get("/api/data").then(res=>{
+      console.log(res.data)
+    }).catch(err=>console.log(err))
+  }
 
   render() {
     return (
